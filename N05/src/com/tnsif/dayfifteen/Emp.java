@@ -1,14 +1,17 @@
 package com.tnsif.dayfifteen;
 
-public class Employee implements Comparable<Employee>{
+import java.util.Comparator;
+
+public class Emp {
 	private int empId;
 	private String empName;
 	private float salary;
 	private String designation;
 
-	public Employee() {
+	public Emp() {
 	}
-	public Employee(int empId, String empName, float salary, String designation) {
+
+	public Emp(int empId, String empName, float salary, String designation) {
 		this.empId = empId;
 		this.empName = empName;
 		this.salary = salary;
@@ -52,15 +55,26 @@ public class Employee implements Comparable<Employee>{
 		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", designation="
 				+ designation + "]";
 	}
-	
+}
+
+
+class SortByName implements Comparator<Emp>
+{
 	@Override
-	public int compareTo(Employee o) {
-		//sort based on salary	
-		//return (int) (getSalary()-o.getSalary());
-		
-		//sort on descending order of name
-		return o.getEmpName().compareTo(getEmpName());
+	public int compare(Emp o1, Emp o2) {
+		// TODO Auto-generated method stub
+		return o1.getEmpName().compareTo(o2.getEmpName());
 		
 	}
-
 }
+
+class SortByDesignation implements Comparator<Emp>
+{
+	@Override
+	public int compare(Emp o1, Emp o2) {
+		// TODO Auto-generated method stub
+		return o2.getDesignation().compareTo(o1.getDesignation());
+		
+	}
+}
+ 
