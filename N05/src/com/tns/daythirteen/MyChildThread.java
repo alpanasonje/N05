@@ -1,6 +1,7 @@
 package com.tns.daythirteen;
 
 public class MyChildThread extends Thread {
+	//Constructor
 	public MyChildThread() {
 		start();
 	}
