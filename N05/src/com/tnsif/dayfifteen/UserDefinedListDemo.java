@@ -12,6 +12,8 @@ public class UserDefinedListDemo {
 		empList.add(new Employee(121,"Anita",66000,"Sr. Java Developer"));
 		empList.add(new Employee(103,"Prajakta",35000,"Jr. Java Developer"));
 		System.out.println(empList);
+		
+		//Using Comparable
 		Collections.sort(empList);
 		System.out.println(empList);
 		
@@ -21,10 +23,13 @@ public class UserDefinedListDemo {
 		empListOne.add(new Emp(121,"Anita",66000,"Sr. Java Developer"));
 		empListOne.add(new Emp(103,"Prajakta",35000,"Jr. Java Developer"));
 		System.out.println(empListOne);
+		
+		//Using Implementable class of Comparator
 		Collections.sort(empListOne, new SortByName());
 		System.out.println(empListOne);
 		System.out.println("-------------------------------");
 		
+		//Using Implementable class of Comparator	
 		Collections.sort(empListOne, new SortByDesignation());
 		System.out.println(empListOne);
 		System.out.println("-------------------------------");
