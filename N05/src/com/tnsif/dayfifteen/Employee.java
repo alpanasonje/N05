@@ -56,10 +56,10 @@ public class Employee implements Comparable<Employee>{
 	@Override
 	public int compareTo(Employee o) {
 		//sort based on salary	
-		//return (int) (getSalary()-o.getSalary());
+		return (int) (getSalary()-o.getSalary());
 		
 		//sort on descending order of name
-		return o.getEmpName().compareTo(getEmpName());
+		//return o.getEmpName().compareTo(getEmpName());
 		
 	}
 
