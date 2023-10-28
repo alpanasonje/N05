@@ -4,7 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -21,6 +23,7 @@ import com.tnsif.businesslogic.Operations;
 //@Disabled
 public class MyTestClass {
 	
+	
 	//@Test - use for unit testing 
 	//@Test
 	//@RepeatedTest(0)
@@ -36,7 +39,8 @@ public class MyTestClass {
 	{
 		long actual = Operations.getFactorial(0);
 		long expected = 1;
-		Assertions.assertEquals(expected, actual);	
+		Assertions.assertEquals(expected, actual);
+		Function f=(obj)->Arrays.sort();
 	}
 	
 	@ParameterizedTest

@@ -1,11 +1,11 @@
 package com.tnsif.daytwentytwo;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.function.Consumer;
-import java.util.function.Predicate;
+import java.util.function.Function;
+
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -14,24 +14,30 @@ public class StreamBasics {
 	public static void main(String[] args) {
 		Stream<String> strStream=Stream.of("Nashik","Pune","Mumbai");
 		strStream.forEach(System.out::println);
+		
 		System.out.println("----------------------");
 		List<String> words = Arrays.asList("Hello", "Stream", "Learning");
 		System.out.println(words);
 		System.out.println("----------------------");
+		
 		System.out.println("Strings in uppercase : ");
-		List<String> s1 = words.stream().map(str -> str.toUpperCase()).collect(Collectors.toList());
+		
+		Function<String, String> fun=(str) -> str.toUpperCase();
+		List<String> s1 = words.stream().map(fun).collect(Collectors.toList());
 		System.out.println(s1);
+		
 		System.out.println("----------------------");		
-		words.stream().map(str->str.toLowerCase()).forEach(System.out::println);
+		fun=str->str.toLowerCase();
+		words.stream().map(fun).forEach(System.out::println);
 		System.out.println(words);
 
-		
-		
 		Float f[]= {12.5f,67.8f,80f,12.5f,67.8f,50f};
 		Stream<Float> floatStream=Arrays.stream(f);
 		System.out.println("----------------------");
+		
 		Consumer<Float> c=(n)->System.out.println("Price is "+n); 
 		floatStream.forEach(c);
+		
 		System.out.println("----------------------");
 		floatStream=Arrays.stream(f);
 		floatStream.limit(1).forEach(c);
@@ -42,9 +48,7 @@ public class StreamBasics {
 		floatStream=Arrays.stream(f);
 		floatStream.distinct().forEach(c);
 		
-		
-		
-		
+			
 		/*
 		 * //creation of list from an array of integers List<Integer>
 		 * intList=Arrays.asList(4,7,2,9); System.out.println(intList);
